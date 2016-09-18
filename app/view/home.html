@@ -1,0 +1,68 @@
+<div class="container">
+<h2>Add a new movie</h2>
+<form ng-submit="addMovie()">
+    <div class="col-lg-5">
+    <div class="form-group ">
+        <label for="title">Title:</label>
+        <input type="text" ng-model="movie.title" class="form-control" id="title">
+    </div>
+    <div class="form-group">
+        <label for="director">Director:</label>
+        <input type="text" ng-model="movie.director" class="form-control" id="director">
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre:</label>
+        <input type="text" ng-model="movie.genre" class="form-control" id="genre">
+    </div>
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" ng-model="movie.country" class="form-control" id="country">
+    </div>
+    <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="text" ng-model="movie.year" class="form-control" id="year">
+    </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-default">Submit</button>
+                <div class="loader pull-right"></div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+
+<div class="container">
+    <h2>Movie list</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Title</td>
+                <td>Director</td>
+                <td>Genre</td>
+                <td>Country</td>
+                <td>Year</td>
+                <td>Delete</td>
+                <td>Edit</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="moive in movieList">
+                <td>{{$index + 1}}</td>
+                <td>{{moive.title}}</td>
+                <td>{{moive.director}}</td>
+                <td>{{moive.genre}}</td>
+                <td>{{moive.country}}</td>
+                <td>{{moive.year}}</td>
+                <td>
+                    <button type="button" ng-click="deleteMovie($index)" class="btn btn-danger">Delete</button>
+                </td>
+                <td>
+                    <button type="button" ui-sref="edit({id: moive._id})" class="btn btn-info">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

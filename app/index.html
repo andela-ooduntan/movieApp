@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="movieApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="movieApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="movieApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="movieApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>A movie App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home">Brand</a>
+    </div>
+  <ul class="nav navbar-nav navbar-left">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+    </ul>
+  <form class="navbar-form navbar-left" role="search">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="searchTerm" placeholder="Search for...">
+        <span class="input-group-btn">
+        <button class="btn btn-default" ui-sref="search({q: searchTerm})" type="button">Go!</button>
+      </span>
+      </div>
+    </div>
+  </form>
+</nav>
+
+<div class="container" ui-view></div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="app.js"></script>
+  <script src="controller/movieHome.js"></script>
+  <script src="controller/editController.js"></script>
+  <script src="controller/searchContrl.js"></script>
+  <script src="service/appService.js"></script>
+</body>
+</html>
